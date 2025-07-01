@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Notes App</title></head>
+<body style="background:#111;color:white;text-align:center;">
+<h2>Quick Notes</h2>
+<textarea id="note" rows="10" cols="30"></textarea><br>
+<button onclick="save()">Save</button>
+<script>
+function save() {
+  localStorage.setItem("note", document.getElementById("note").value);
+  alert("Saved!");
+}
+window.onload = function() {
+  document.getElementById("note").value = localStorage.getItem("note") || "";
+}
+</script>
+</body>
+</html>
